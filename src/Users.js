@@ -12,6 +12,11 @@ const Users = () => {
     const match = users.filter((n) => n.name.includes(searchName));
     setSearchResult(match);
   };
+  const handleEmailSearchChange = (event) => {
+    const searchEmail = event.target.value;
+    const match = users.filter((n) => n.email.includes(searchEmail));
+    setSearchResult(match);
+  };
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -28,7 +33,13 @@ const Users = () => {
           id=""
           placeholder="Enter Name"
         />
-        <input type="text" name="" id="" placeholder="Enter Name" />
+        <input
+          onChange={handleEmailSearchChange}
+          type="email"
+          name=""
+          id=""
+          placeholder="Enter Email"
+        />
       </div>
       <div className="container">
         {searchResult.map((user) => (
