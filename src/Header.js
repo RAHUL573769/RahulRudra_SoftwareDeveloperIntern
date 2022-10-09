@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div>
       <nav>
-        <a href="/users">Users</a>
+        <a href="/">Users</a>
       </nav>
     </div>
   );
